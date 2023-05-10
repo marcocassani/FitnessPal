@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../static/signupstyle.css">
+    
+</head>
+<body>
+    <div class="container-fluid bg-image">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="form-container">
+            <h1 class="text-center">SIGN UP</h1>
+            <form method="post">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter password">
+              </div>
+              <div class="form-group">
+                <label for="retype-password">Retype Password:</label>
+                <input type="password" class="form-control" name="retype-password" placeholder="Retype password">
+              </div>
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" name="age" placeholder="Enter age">
+              </div>
+              <div class="form-group">
+                <label for="sex">Biological Sex:</label>
+                <select class="form-control" name="sex">
+                  <option>Female</option>
+                  <option>Male</option>
+                </select>
+              </div>
+                <a href="/workouts"><button type="submit" class="btn btn-primary">Submit</button></a>
+              <!-- <a href="/workouts"><button type="submit" class="btn btn-primary">Submit</button></a> -->
+
+            </form>
+          </div>
+        </div>
+
+        <div class="welcome-text">
+            <h2>Welcome to FitnessPal!</h2>
+
+        </div>
+      </div>
+    </div>
+  </body>  
+</html>

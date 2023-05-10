@@ -1,0 +1,67 @@
+body {
+    background-image: url(https://media.self.com/photos/61cdd3e1c98d78cc0b05518a/16:9/w_1600%2Cc_limit/211109_SELF_081.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .overlay h1 {
+    font-size: 48px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .overlay p {
+    font-size: 18px;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .btn {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    margin-bottom: 12px;
+  }
+  .btn-signup {
+    background-color: #fff;
+    color: #222;
+  }
+  .btn-login {
+    background-color: #4a4a4a;
+    color: #fff;
+  }
+  .already-user {
+    font-size: 16px;
+    margin-top: 0;
+    text-align: center;
+  }
+

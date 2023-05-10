@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Workouts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../static/workouts.css">
+    
+</head>
+<body>
+    <div class="container-fluid">
+      <h1 class="text-center fw-bold">FitnessPal - YOUR WORKOUTS</h1>
+      <div class="row mt-5">
+        <div class="col-sm-4">
+          <div class="card bg-light mb-3">
+            <div class="card-header text-center fw-bold">Cardio</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                {% block cardio %}
+                <ul>
+                    {% for workouts in c%}
+                        <a href = "/exercise"><li>{{workouts}}</li></a>
+                    {% endfor %}
+            
+                </ul>
+                {% endblock %}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card bg-light mb-3">
+            <div class="card-header text-center fw-bold">Upper Body</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <li class="list-group-item">
+                  {% block upper %}
+                  <ul>
+                      {% for workouts in u%}
+                          <a href = "/exercise"><li>{{workouts}}</li></a>
+                      {% endfor %}
+              
+                  </ul>
+                  {% endblock %}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card bg-light mb-3">
+            <div class="card-header text-center fw-bold">Lower Body</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <li class="list-group-item">
+                  {% block lower %}
+                  <ul>
+                      {% for workouts in l%}
+                          <a href = "/exercise"><li>{{workouts}}</li></a>
+                      {% endfor %}
+              
+                  </ul>
+                  {% endblock %}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card bg-light mb-3">
+            <div class="card-header text-center fw-bold">Core</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                {% block core %}
+                <ul>
+                    {% for workouts in co%}
+                        <a href = "/exercise"><li>{{workouts}}</li></a>
+                    {% endfor %}
+            
+                </ul>
+                {% endblock %}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card bg-light mb-3">
+            <div class="card-header text-center fw-bold">Favorites</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

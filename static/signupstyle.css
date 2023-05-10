@@ -1,0 +1,24 @@
+.bg-image {
+    background-image: url("https://post.healthline.com/wp-content/uploads/2021/08/fitness-exercise-friends-outdoors-732x549-thumbnail-732x549.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+  
+  .welcome-text {
+    position: absolute;
+    top: 5%;
+    left: 1.5%;
+    color: #000;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: left;
+  }
+  

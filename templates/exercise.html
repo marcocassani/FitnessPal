@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Individual Workout</title>
+	<link rel="stylesheet" type="text/css" href="../static/exercise.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">
+            <!-- insert title here -->
+			{% block title %}
+
+            {% endblock %}
+        </h1>
+		<div class="row">
+			<div class="col-md-6 border border-white bg-light">
+				<h2 class="text-center">Information</h2>
+				<p class="text-center"> 
+					{% block info %}
+
+            		{% endblock %}
+                    <!-- insert instructions here -->
+                </p>
+			</div>
+			<div class="col-md-6">
+				<div class="image-container">
+
+					{% block img %}
+
+            		{% endblock %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<!-- NEED TO FIGURE OUT HOW TO KNOW WHAT LINK THE USER CLICKED ON -->
+
+</html>

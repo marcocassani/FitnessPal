@@ -1,0 +1,51 @@
+.workout-card {
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .workout-card h3 {
+    margin-top: 0;
+    font-family: Inter, sans-serif;
+  }
+  
+  .workout-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  
+  p {
+    font-family: Inter, sans-serif;
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 50px;
+    }
+  
+    .workout-card h3 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
