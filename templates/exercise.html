@@ -1,35 +1,32 @@
+<!-- all HTML code in this file was written by ChatGPT and modified by me a bit; non-HTML code is mine, specifically Jinja-->
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Individual Workout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 	<link rel="stylesheet" type="text/css" href="../static/exercise.css">
+	
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center">
+		<h1 class="text-center font-weight-bold">
             <!-- insert title here -->
-			{% block title %}
-
-            {% endblock %}
+			{{h}}
         </h1>
-		<div class="row">
-			<div class="col-md-6 border border-white bg-light">
-				<h2 class="text-center">Information</h2>
-				<p class="text-center"> 
-					{% block info %}
+		<a href="/logout"><button class="btn btn-outline-dark" id="logout-btn">Logout</button></a>
 
-            		{% endblock %}
-                    <!-- insert instructions here -->
-                </p>
-			</div>
-			<div class="col-md-6">
-				<div class="image-container">
-
-					{% block img %}
-
-            		{% endblock %}
-
+		<div class="row no-gutters">
+			<div class="col-6">
+				<div class="grey-rectangle">
+				  <h2 class="header-title">Instructions</h2>
+				  <p class="placeholder-text">{{i}}</p>
 				</div>
+			  </div>
+			<div class="col-6">
+				<!-- insert image -->
+				<img src={{im}} class = "workout-image">
 			</div>
 		</div>
 	</div>

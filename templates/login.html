@@ -1,3 +1,6 @@
+<!-- all HTML code in this file was written by ChatGPT and modified by me a bit; non-HTML code is mine -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,16 +25,19 @@
             <div class="col-md-4">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form action = "/workouts" method="POST">
+
+                    <!-- form begins -->
+                    <form method="post">
                         <div class="form-group">
                             <label for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                            <input type="username" name = "username" class="form-control" id="username" placeholder="Enter username">
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            <input type="password" name = "password" class="form-control" id="password" placeholder="Enter password">
                         </div>
-                        <a href="/workouts"><button type="submit" class="btn btn-primary">Submit</button></a>
+                            <!-- submit -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>

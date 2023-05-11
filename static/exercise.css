@@ -1,42 +1,57 @@
 body {
-    font-family: 'Inter', sans-serif;
-}
-
-.container {
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 20px;
-}
-
-.text-center {
+	overflow: hidden;
+	font-family: Inter, sans-serif;
 	text-align: center;
 }
 
-.row {
-	display: flex;
-	flex-wrap: wrap;
-	margin-right: -15px;
-	margin-left: -15px;
+.container {
+	height: 100vh;
+	padding: 20px;
 }
 
-.col-md-6 {
-	flex: 0 0 50%;
-	max-width: 50%;
-	padding-right: 15px;
-	padding-left: 15px;
+.header {
+	margin-top: 20vh;
 }
 
-.border-white {
-	border-color: #fff;
+.row
+{
+	padding-top: 30px;
 }
-
-.bg-light {
-	background-color: #f8f9fa!important;
-}
-
-.image-container {
+.grey-rectangle {
 	height: 100%;
-	border: 1px solid #fff;
-	background: url('placeholder-image.jpg') center center no-repeat;
-	background-size: cover;
+	border: 1px solid #D9D9D9;
+	padding: 10px;
+	color: #D9D9D9!important;
+}
+
+.header-title {
+
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.placeholder-text {
+
+	font-size: 1rem;
+	color: black;
+	margin: 0;
+}
+
+.workout-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+
+
+
+#logout-btn {
+	font-family: 'Inter', sans-serif;
+	color: black;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }

@@ -16,25 +16,26 @@ def index():
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
+    
     if request.method == "GET":
         return render_template("login.html")
     elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
 
+# check if username/password combo exist in database; if not, spit back out to index, if so, advance to workouts
         if db_session.query(User).where((User.username == username) & (User.password == password)).first() != None:
             session["username"] = username
-        else: 
-            return render_template("login.html")
-
-        return redirect(url_for("workouts"))
-
+            return redirect(url_for("workouts"))
+        else:
+            return render_template("index.html")
 
 
 @app.route("/signup", methods = ["GET", "POST"])
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
+        #if is POST, save inputted data into variables to put into database if the password = check passcode. move onto workouts
     elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -57,31 +58,35 @@ def workouts():
         if "username" in session:
             currentUser = db_session.query(User).where(User.username == session["username"]).first()
 
-            #compiles list of obj that meet criteria
-            cardio = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "cardio") & (currentUser.sex == Workout.sex or Workout.sex =="both")).all()
-            upperbody = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "upper body") & (currentUser.sex == Workout.sex or Workout.sex =="both")).all()
-            lowerbody = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "lower body") & (currentUser.sex == Workout.sex or Workout.sex =="both")).all()
-            core = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "cardio") & (currentUser.sex == Workout.sex or Workout.sex =="both")).all()
-
+            #compiles list of obj that meet criteria for each workout type
+            cardio = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "cardio") & ((currentUser.sex.lower() == Workout.sex) | (Workout.sex == "both"))).all()
+            upperbody = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "upper body") & ((currentUser.sex.lower() == Workout.sex) | (Workout.sex == "both"))).all()
+            lowerbody = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "lower body") & ((currentUser.sex.lower() == Workout.sex) | (Workout.sex == "both"))).all()
+            core = db_session.query(Workout).where((currentUser.age <= Workout.max_age) & (Workout.category == "core") & ((currentUser.sex.lower() == Workout.sex) | (Workout.sex == "both"))).all()
+            print(upperbody)
             return render_template("workouts.html", c = cardio, u = upperbody, l = lowerbody, co = core)
-
         else:
             return redirect(url_for("index"))
 
-@app.route("/exercise")
-def exercise():
+#pass in through URL
+@app.route("/exercise/<workout_id>")
+def exercise(workout_id):
+    print(workout_id)
     if request.method == "GET":
         if "username" in session:
+            #pass in desired information to fill exercise.html
+            header = db_session.query(Workout.header).where((workout_id == Workout.id)).first()[0]
+            info = db_session.query(Workout.info).where((workout_id == Workout.id)).first()[0]
+            img = db_session.query(Workout.img).where((workout_id == Workout.id)).first()[0]
 
-            #header = db_session.query(Workout).where(header of the link that I clicked on)
-
-            return render_template("exercise.html")
+            return render_template("exercise.html", h = header, i = info, im = img)
         else:
             return redirect(url_for("index"))
 
 @app.route("/logout")
 def logout():
     if "username" in session:
+        #remove from session so another can login
         session.pop("username")
 
     return redirect(url_for("index"))
